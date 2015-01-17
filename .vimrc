@@ -15,6 +15,8 @@ nnoremap <c-l> <c-w><c-l>
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 
+" colorscheme desert
+
 " 1 tab to 2 space
 set tabstop=2
 set softtabstop=2
@@ -46,6 +48,12 @@ Plugin 'L9'
 " https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive'
 
+" Auto closing braces 
+" **NOTE**: This plugin should be added before endwise
+Plugin 'Raimondi/delimitMate'
+let delimitMate_expand_space=1
+let delimitMate_expand_cr=2
+
 " ruby wisely add end
 Plugin 'tpope/vim-endwise'
 
@@ -55,10 +63,10 @@ Plugin 'vim-scripts/The-NERD-Commenter'
 " File tree like something called IDE
 Plugin 'scrooloose/nerdtree'
 " Shortcut to open NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-" Open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <c-n> :NERDTreeToggle<cr>
+" open a nerdtree automatically when vim starts up if no files were specified
+autocmd stdinreadpre * let s:std_in=1
+autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " quickly search file(s), use ctrl+p, F5 refresh
 Plugin 'kien/ctrlp.vim'
@@ -69,10 +77,10 @@ Plugin 'kien/ctrlp.vim'
 "" ctrl+o for LRU buffer
 "map <c-o> :CtrlPBuffer<CR>
 
-" Auto closing braces
-Plugin 'Raimondi/delimitMate'
-let delimitMate_expand_space=1
-let delimitMate_expand_cr=1
+" For edit HTML
+" Tutorial: https://github.com/mattn/emmet-vim/blob/master/TUTORIAL
+Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<c-m>'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
