@@ -81,6 +81,8 @@ Plugin 'kien/ctrlp.vim'
 " Tutorial: https://github.com/mattn/emmet-vim/blob/master/TUTORIAL
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-m>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " All of your Plugins must be added before the following line
 call vundle#end()
