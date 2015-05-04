@@ -23,6 +23,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" for python indention
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
 " number line show 
 set number
 
@@ -82,7 +85,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-m>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,php,eruby EmmetInstall
 
 " All of your Plugins must be added before the following line
 call vundle#end()
